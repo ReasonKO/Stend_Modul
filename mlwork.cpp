@@ -181,11 +181,8 @@ void MainAlgWorker::addEvalString(QString s)
     saveEvalString+=s+"\n";
 }*/
 
-#include <QTime>
 void MainAlgWorker::run()
 {
-    QTime qtimer;
-    qtimer.start();
     Time_count++;
     timer = clock();
 //    if(!shutdowncomp && fmtlab)
@@ -195,14 +192,13 @@ void MainAlgWorker::run()
     engEvalString(fmldata.ep, fmldata.config.file_of_matlab);
 
     clock_t timer_c=clock()-timer;
-    printf("%d ",qtimer.elapsed());
 
     if (timer_c>timer_max)
         timer_max=timer_c;
     timer_s=timer_s+timer_c;
     if (clock()-timer_m>CLOCKS_PER_SEC)
     {
-        printf("\n---------------------------------\n");
+        //printf("\n---------------------------------\n");
 
         timer_m=clock();
         QString temp;

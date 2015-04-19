@@ -127,6 +127,9 @@
       <height>22</height>
      </rect>
     </property>
+    <property name="minimum">
+     <number>2</number>
+    </property>
     <property name="maximum">
      <number>100</number>
     </property>
